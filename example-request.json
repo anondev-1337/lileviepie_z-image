@@ -1,0 +1,334 @@
+{
+  "input": {
+    "workflow": {
+      "1": {
+        "inputs": {
+          "filename": "z_image_turbo_bf16.safetensors"
+        },
+        "class_type": "UNETLoader",
+        "_meta": {
+          "title": "UNETLoader"
+        }
+      },
+      "2": {
+        "inputs": {
+          "filename": "qwen_3_4b.safetensors"
+        },
+        "class_type": "CLIPLoader",
+        "_meta": {
+          "title": "CLIPLoader"
+        }
+      },
+      "3": {
+        "inputs": {
+          "filename": "ae.safetensors"
+        },
+        "class_type": "VAELoader",
+        "_meta": {
+          "title": "VAELoader"
+        }
+      },
+      "4": {
+        "inputs": {
+          "seed": 118276800892098,
+          "steps": 8,
+          "cfg": 1,
+          "sampler_name": "dpmpp_sde",
+          "scheduler": "beta",
+          "denoise": 1,
+          "model": [
+            "24",
+            0
+          ],
+          "positive": [
+            "5",
+            0
+          ],
+          "negative": [
+            "6",
+            0
+          ],
+          "latent_image": [
+            "7",
+            0
+          ]
+        },
+        "class_type": "KSampler",
+        "_meta": {
+          "title": "KSampler"
+        }
+      },
+      "5": {
+        "inputs": {
+          "text": "l3n0v0, instagram selfie quality, golden hour vibes, low quality, tilted head, This is a high-quality, photograph of lileviepie, captured with a likely smartphone camera, given the shallow depth of field and JPEG artifacts. The image features lileviepie with long, dark brown hair, wearing a dark jacket, smiling slightly playfully. The background is having natural depth of field showing a simple white background. The photo uses natural lighting, and there is no watermark present. The aesthetic quality is low, with a slightly grainy texture due to low light conditions.",
+          "clip": [
+            "24",
+            1
+          ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "CLIPTextEncode"
+        }
+      },
+      "6": {
+        "inputs": {
+          "text": "freckles, thick eyebrows, å¨æ¼«é£, äºæ¬¡å, æ¼«ç»é£, æç»é£, å¡éé£, Qç, æç»é£, æ°´å½©ç», ç´ æé£, çº¿ç¨¿, èå¾, åå®æ²¹ç», æ²¹ç»é£, çç»é£, åç´ ç», pixel art, ç¹éµç», low poly, voxel, blueprint, çº¿æ¡å¾, 3Dæ¸²æ, 3Dæ¨¡å, CGæ¸²æ, CGé£æ ¼, æ¸¸ææ¨¡å, æ¸¸æè§è², èæå½¢è±¡, vtuberé£, VTuberé£, cyberpunk, èµåæåé£, vaporwave, synthwave, glitch art, èµåé£, éè¹èµåæåé£, ä½æ¸æ°åº¦, ä½åè¾¨ç, æ¨¡ç³, èç¦, å¯¹ç¦å¤±è´¥, å¤±ç¦, å¤±ç, åªç¹ä¸¥é, è¿åº¦åªç¹, JPEGä¼ªå½±, åç¼©ä¼ªå½±, è¿åº¦åç¼©, æä¸ä¼ªå½±, è²å½©æº¢åº, é¢è²æ­å±, åè²ä¸¥é, è¿åº¦éå, è¿åº¦éåª, è¿åº¦HDR, HDRé£, åæ, çè¾¹, è¿æé«å, æ­»é»é´å½±, è½®å»åå, è¾¹ç¼åå, é¯é½¿, ç²ç³ç»è, åå½±ä¸çå®, ä¸çå®åå°, ä¸çå®åå½±, ç½çº¢é»è®¤äººè¸æ¨¡æ¿, é»è®¤é£æ ¼äººè¸, åäººä¸é¢, åç¯ä¸å¾çè¸, åä¸å¼ è¸, ç»ä¸è¸å, ç»ä¸äºå®, æ ååè¸, å®ç¾å¯¹ç§°è¸, å®ç¾æ ççè¸, ç¡¬å¹ç²¾è´è¸, åç²¾è´è¸, ç»ä¸çå­è¸, ç»ä¸å°ä¸å·´, ç»ä¸é«é¼»æ¢, ç»ä¸åç¼ç®, ç»ä¸å¥³ç¥è¸, ç¥ä»é¢å¼æ¨¡æ¿, ç¾é¢æ»¤é, è¿åº¦ç£¨ç®, ç£¨ç®è¿åº¦, ç£¨ç®æ»¤é, ç£¨ç®ç®è¤, ç»çç®, ç»çç®è¤, ç·å¨å¨ç®è¤, âå®ç¾ç®è¤â, è¿åº¦ç¾ç½, å¤±çç®è¤, ä¸çå®ç®è¤çº¹ç, èåç®è¤çº¹ç, å¡æè´¨æç®è¤, è¡åè¸, åè¸, åç®è¤, è¿åº¦ä¿®å¾, è¿åº¦æ¶²å, æ¶²ååå½¢, ä¿®å¾çè¿¹, è¿åº¦ç¦è¸, è¿åº¦å°è¸, ä¸çå®äºå®æ¯ä¾, ä¸çå®å¤´èº«æ¯, PSçè¿¹ææ¾, è¿åº¦æ»¤é, å½±æ¥¼é£, åçæ£é£, åçæ£æå, å½±æ¥¼ç²¾ä¿®, âç²¾ä¿®å¤§çâ, æ£æå¤§ç, æ£æå¤§çé£, æå¿å°é¢é£, æ¶å°æå¿æ£æé£, glamour, idol poster, idol promo, KOLå¤´å, KOLé£, ä¸»æ­è¸, ç´æ­è¸, ç´æ­é´æ»¤é, å¹¿åç¡¬ç§, å¼ºçåä¸å¹¿åæ, åä¸å¾åºæ¨¡æ¿é£, è¿åº¦æ¶å°å¤§çæ, å¤¸å¼ æ£ææ, è¿åº¦é«çº§æ, ç»ä¸æµ·æ¥é£, éç¨å¹¿åæ¨¡ç¹æ, èªææè§è§, ææºåç½®æåå¤´, è¿è¿å¹¿è§ç¸å, å¤§å¤´ç¸å, é±¼ç¼ç¸å, è¶å¹¿è§ç¸å, ç´æ­æ»¤é, èªææ»¤é, èªæç¾é¢, æé³æ»¤é, å¿«ææ»¤é, ç»ä¸ç½çº¢èªææ¨¡æ¿, stock photo, åºå­ç§çæ, å¸åstock photo, éç¨å¾åºæ¨¡ç¹, åä¸å¾åºé£, åç¯ä¸å¾å¾åºæ¨¡ç¹, åµç¡¬å§¿å¿, åµç¡¬è¡¨æ, å¡æç¬å®¹, åç¬, èåçè¡¨æ, åµå°¸è¸, åµç¡¬çç¼ç¥, è¿åº¦ææå§¿å¿, ç»ä¸å§¿å¿, éå¤å§¿å¿, ç»ä¸æå¾, å¹¿åæ¨¡æ¿, éç¨æµ·æ¥èæ¯, éç¨å¹¿åèæ¯, template background, AIæå¾å¼º, ä¸ç¼çåºæ¯AIå¾, äººå·¥çè¿¹, ä¸èªç¶, èåèæ¯, åæ¯æ·±, è¿åº¦æ¯æ·±èå, èæ¯ä¹±ç³ç³, ä½è´¨é, ä½ç»è, èçç»è, ä¸çå®, éç§ç, éæå½±, éèªç¶å, ååæº, ä¸èªç¶é«å, è¿åº¦éåçº¿æ¡, è½®å»è¿ç¡¬, è¾¹ç¼è¿ç¡¬, è½®å»ä¸å¹²å, åªç¹åç¶æ, æ¨¡æé£æ ¼èä¸æ¯å®éç§ç",
+          "clip": [
+            "2",
+            0
+          ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "CLIPTextEncode"
+        }
+      },
+      "7": {
+        "inputs": {
+          "width": 1024,
+          "height": 1024,
+          "batch_size": 1
+        },
+        "class_type": "EmptySD3LatentImage",
+        "_meta": {
+          "title": "EmptySD3LatentImage"
+        }
+      },
+      "8": {
+        "inputs": {
+          "anything": [
+            "3",
+            0
+          ]
+        },
+        "class_type": "Anything Everywhere",
+        "_meta": {
+          "title": "Anything Everywhere"
+        }
+      },
+      "9": {
+        "inputs": {
+          "samples": [
+            "4",
+            0
+          ]
+        },
+        "class_type": "VAEDecode",
+        "_meta": {
+          "title": "VAEDecode"
+        }
+      },
+      "10": {
+        "inputs": {
+          "images": [
+            "9",
+            0
+          ]
+        },
+        "class_type": "PreviewImage",
+        "_meta": {
+          "title": "PreviewImage"
+        }
+      },
+      "11": {
+        "inputs": {
+          "seed": 1085248094201387,
+          "steps": 8,
+          "cfg": 1,
+          "sampler_name": "dpmpp_sde",
+          "scheduler": "simple",
+          "denoise": 0.35,
+          "model": [
+            "24",
+            0
+          ],
+          "positive": [
+            "5",
+            0
+          ],
+          "negative": [
+            "6",
+            0
+          ],
+          "latent_image": [
+            "12",
+            0
+          ]
+        },
+        "class_type": "KSampler",
+        "_meta": {
+          "title": "KSampler"
+        }
+      },
+      "12": {
+        "inputs": {
+          "text": "bislerp",
+          "samples": [
+            "4",
+            0
+          ]
+        },
+        "class_type": "LatentUpscaleBy",
+        "_meta": {
+          "title": "LatentUpscaleBy"
+        }
+      },
+      "13": {
+        "inputs": {
+          "samples": [
+            "11",
+            0
+          ]
+        },
+        "class_type": "VAEDecode",
+        "_meta": {
+          "title": "VAEDecode"
+        }
+      },
+      "14": {
+        "inputs": {
+          "images": [
+            "13",
+            0
+          ]
+        },
+        "class_type": "PreviewImage",
+        "_meta": {
+          "title": "PreviewImage"
+        }
+      },
+      "15": {
+        "inputs": {
+          "filename": "ema_vae_fp16.safetensors"
+        },
+        "class_type": "SeedVR2LoadVAEModel",
+        "_meta": {
+          "title": "SeedVR2LoadVAEModel"
+        }
+      },
+      "16": {
+        "inputs": {
+          "filename": "seedvr2_ema_3b-Q4_K_M.gguf"
+        },
+        "class_type": "SeedVR2LoadDiTModel",
+        "_meta": {
+          "title": "SeedVR2LoadDiTModel"
+        }
+      },
+      "17": {
+        "inputs": {
+          "text": "lanczos",
+          "image": [
+            "13",
+            0
+          ]
+        },
+        "class_type": "ImageScaleBy",
+        "_meta": {
+          "title": "ImageScaleBy"
+        }
+      },
+      "18": {
+        "inputs": {
+          "value": 9527,
+          "image": [
+            "17",
+            0
+          ],
+          "dit": [
+            "16",
+            0
+          ],
+          "vae": [
+            "15",
+            0
+          ]
+        },
+        "class_type": "SeedVR2VideoUpscaler",
+        "_meta": {
+          "title": "SeedVR2VideoUpscaler"
+        }
+      },
+      "19": {
+        "inputs": {
+          "filename_prefix": "update",
+          "images": [
+            "18",
+            0
+          ]
+        },
+        "class_type": "SaveImage",
+        "_meta": {
+          "title": "SaveImage"
+        }
+      },
+      "20": {
+        "inputs": {
+          "value": [
+            {
+              "name": "A",
+              "selected": true,
+              "url": "/api/view?filename=rgthree.compare._temp_osnob_00063_.png&type=temp&subfolder=&rand=0.167484078866169"
+            },
+            {
+              "name": "B",
+              "selected": true,
+              "url": "/api/view?filename=rgthree.compare._temp_osnob_00064_.png&type=temp&subfolder=&rand=0.13139440954587867"
+            }
+          ],
+          "image_a": [
+            "18",
+            0
+          ],
+          "image_b": [
+            "9",
+            0
+          ]
+        },
+        "class_type": "Image Comparer (rgthree)",
+        "_meta": {
+          "title": "Image Comparer (rgthree)"
+        }
+      },
+      "23": {
+        "inputs": {
+          "lora_name": "lileviepie.safetensors",
+          "strength_model": 1.2,
+          "strength_clip": 1.2,
+          "model": [
+            "1",
+            0
+          ],
+          "clip": [
+            "2",
+            0
+          ]
+        },
+        "class_type": "LoraLoader",
+        "_meta": {
+          "title": "LoraLoader"
+        }
+      },
+      "24": {
+        "inputs": {
+          "lora_name": "lenovo_z.safetensors",
+          "strength_model": 0.5,
+          "strength_clip": 1,
+          "model": [
+            "23",
+            0
+          ],
+          "clip": [
+            "23",
+            1
+          ]
+        },
+        "class_type": "LoraLoader",
+        "_meta": {
+          "title": "LoraLoader"
+        }
+      }
+    }
+  }
+}
